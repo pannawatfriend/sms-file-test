@@ -1,5 +1,5 @@
 # Stage 1: Build the Go binary
-FROM golang:1.21-alpine AS build
+FROM golang:1.23-alpine AS build
 
 # Set necessary Go environment variables
 ENV CGO_ENABLED=0 GOOS=linux GOARCH=amd64
