@@ -13,17 +13,18 @@ import (
 	"github.com/capcom6/go-infra-fx/http"
 	"go.uber.org/fx"
 	"go.uber.org/zap"
+	"github.com/kelseyhightower/envconfig"
 )
 
 var Module = fx.Module(
 	"appconfig",
 	fx.Provide(
 		func(log *zap.Logger) Config {
-			if err := config.LoadConfig(&defaultConfig); err != nil {
-				log.Error("Error loading config", zap.Error(err))
+			cfg := defaultConfig
+			if err := envconfig.Process("", &cfg); err != nil {
+				log.Fatal("Error loading environment variables", zap.Error(err))
 			}
-
-			return defaultConfig
+			return cfg
 		},
 	),
 	fx.Provide(func(cfg Config) http.Config {

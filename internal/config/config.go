@@ -1,5 +1,9 @@
 package config
 
+import (
+	"os"
+)
+
 type GatewayMode string
 
 const (
