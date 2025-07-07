@@ -6,7 +6,7 @@
 
 # SMS Gateway for Android™ Server
 
-## If you want to use this server, please create Mysql server and run this srcipt [summary_script.sql](db/migrations/mysql/summary_script.sql) in your server.
+## If you want to use this server, please create Mysql server and run this srcipt [summary_script.sql](internal/sms-gateway/models/migrations/mysql/summary_script.sql) in your server.
 
 This server acts as the backend component of the [SMS Gateway for Android](https://github.com/capcom6/android-sms-gateway), facilitating the sending of SMS messages through connected Android devices. It includes a RESTful API for message management, integration with Firebase Cloud Messaging (FCM), and a database for persistent storage.
 
