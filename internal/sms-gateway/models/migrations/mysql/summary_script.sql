@@ -17,6 +17,8 @@ CREATE TABLE devices (
     created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
     deleted_at DATETIME(3),
+    last_seen DATETIME(3),
+    
     PRIMARY KEY (id),
     UNIQUE INDEX idx_devices_auth_token (auth_token),
     CONSTRAINT fk_users_devices FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
